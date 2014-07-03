@@ -1,47 +1,62 @@
-# Data structures in Java
+# Word Cloud
 
-This is a place where students can begin to learn the basics of 
-data structure written in Java.
+Idea by [lmoehn](https://github.com/lmoehn)
 
-It is based off the "[Algorithms, 4th Edition website](http://algs4.cs.princeton.edu/)".
+You work for a tech conference company.  Somebody transcribes all the noteworthy quotes from all the speakers,
+and enters them into a system.  This system outputs a JSON file that looks like this:
 
-## Mission
+```
+{
+  "Ila Huels" [
+    "OPTIMIZE WEB-ENABLED SUPPLY-CHAINS",
+    "brand sexy channels",
+    "ENVISIONEER ROBUST E-COMMERCE",
+    "TRANSFORM WIRELESS ARCHITECTURES",
+    "BENCHMARK CROSS-PLATFORM PARTNERSHIPS"
+  ],
+  "Cristopher Feest" [
+    "BENCHMARK CROSS-PLATFORM PARTNERSHIPS",
+    "brand sexy channels",
+    "BENCHMARK 24/7 PARADIGMS"
+  ]
+}
+```
 
-Implement the queue and the stack abstract data types in Java. These data
-structures will use [Java generics](http://docs.oracle.com/javase/tutorial/java/generics/)
-to be able to handle items that are all of the same type. Use good test driven development
-flow to help with the development of these data structures.
+Your mission, should you choose to accept it, is to turn the data from this file
+into a Map<String, WordStats>, that can be used by a word cloud. The WordStats
+class has a integer "getCount" method and a "getPeople" metod that is a List<String>.
 
-For the queue, you will implement the following methods:
+You can use the below Ruby array as a guide of what the output might look like from the
+above input. The hashes will be substituted for the WordStats object.
 
-* constructor that takes no arguments and creates an empty queue
-* enqueue(item) - adds an item to the end of queue
-* dequeue - returns an item from the front of queue
-* isEmpty - tells you if the queue is empty or not
-* size - tells you how many items are in the queue
+```
+{
+  "optimize" => { "count" => 1, "people" => ["Ila Huels"] },
+  "web-enabled" => { "count" => 1, "people" => ["Ila Huels"] },
+  "supply-chains" => { "count" => 1, "people" => ["Ila Huels"] },
+  "brand" => { "count" => 2, "people" => ["Ila Huels", "Cristopher Feest"] },
+  "sexy" => { "count" => 2, "people" => ["Ila Huels", "Cristopher Feest"] },
+  "channels" => { "count" => 2, "people" => ["Ila Huels", "Cristopher Feest"] },
+  "envisioneer" => { "count" => 1, "people" => ["Ila Huels"] },
+  "robust" => { "count" => 1, "people" => ["Ila Huels"] },
+  "e-commerce" => { "count" => 1, "people" => ["Ila Huels"] },
+  "transform" => { "count" => 1, "people" => ["Ila Huels"] },
+  "wireless" => { "count" => 1, "people" => ["Ila Huels"] },
+  "architectures" => { "count" => 1, "people" => ["Ila Huels"] },
+  "benchmark" => { "count" => 3, "people" => ["Ila Huels", "Cristopher Feest"] },
+  "cross-platform" => { "count" => 2, "people" => ["Ila Huels", "Cristopher Feest"] },
+  "partnerships" => { "count" => 2, "people" => ["Ila Huels", "Cristopher Feest"] },
+  "24/7" => { "count" => 1, "people" => ["Cristopher Feest"] },
+  "paradigms" => { "count" => 1, "people" => ["Cristopher Feest"] }
+}
+```
 
-For the stack, you will implement the following methods:
-
-* constructor that takes no arguments and creates an empty stack
-* push(item) - adds an item to the stack
-* pop - returns an item from the stack
-* isEmpty - tells you if the stack is empty or not
-* size - tells you how many items are in the stack
+The words appear in a mix of uppercase and lowercase letters, but the resulting word-cloud should be all lowercase,
+and counts and speakers should be case-insensitive.
 
 # Extra
 
-## Iteration
-
-Implement the [Iterable](http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html) interface.
-The iterator should return the elements in the order that they would be dequeued/popped from
-their respective data structures.
-
-## Using a Linked List
-
-If you implemented these data structures using an array internally, re-implement 
-using a linked list internally. Also try it without using the built 
-in [LinkedList](http://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)
-class from Java.
+Write a file in your bin directory that processes all the words in the `data/quotes.json` file.
 
 # Setup
 
