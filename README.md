@@ -57,6 +57,19 @@ and counts and speakers should be case-insensitive.
 # Extra
 
 Write a file in your bin directory that processes all the words in the `data/quotes.json` file.
+This program will produce the following output:
+
+```
+Word: architectures
+Count: 7
+People who said it: [Ila Huels, Ila Huels, Shana Kutch, Orpha Predovic, Vance Rowe, Gertrude Heaney, Emilia Schaefer]
++++++++++++++++++++++++++++
+Word: expedite
+Count: 6
+People who said it: [Shana Kutch, Kobe Hansen II, Dariana Ondricka, Dariana Ondricka, Ara Walsh, Elvis Rodriguez]
++++++++++++++++++++++++++++
+
+```
 
 # Setup
 
