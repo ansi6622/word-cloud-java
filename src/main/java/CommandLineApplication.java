@@ -20,9 +20,9 @@ public class CommandLineApplication {
 
     private static void output(Map<String, WordStat> stats) {
         stats.entrySet().stream().forEach((entry) -> {
-            System.out.println(entry.getKey());
-            System.out.println(entry.getValue().getCount());
-            System.out.println(entry.getValue().getPeople());
+            System.out.println("Word: " + entry.getKey());
+            System.out.println("Count: " + entry.getValue().getCount());
+            System.out.println("People who said it: " + entry.getValue().getPeople());
             System.out.println("+++++++++++++++++++++++++++");
         });
     }
