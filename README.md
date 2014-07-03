@@ -7,14 +7,14 @@ and enters them into a system.  This system outputs a JSON file that looks like 
 
 ```
 {
-  "Ila Huels" [
+  "Ila Huels": [
     "OPTIMIZE WEB-ENABLED SUPPLY-CHAINS",
     "brand sexy channels",
     "ENVISIONEER ROBUST E-COMMERCE",
     "TRANSFORM WIRELESS ARCHITECTURES",
     "BENCHMARK CROSS-PLATFORM PARTNERSHIPS"
   ],
-  "Cristopher Feest" [
+  "Cristopher Feest": [
     "BENCHMARK CROSS-PLATFORM PARTNERSHIPS",
     "brand sexy channels",
     "BENCHMARK 24/7 PARADIGMS"
@@ -24,7 +24,7 @@ and enters them into a system.  This system outputs a JSON file that looks like 
 
 Your mission, should you choose to accept it, is to turn the data from this file
 into a Map<String, WordStats>, that can be used by a word cloud. The WordStats
-class has a integer "getCount" method and a "getPeople" metod that is a List<String>.
+class has a integer "getCount" method and a "getPeople" method that is a List<String>.
 
 You can use the below Ruby array as a guide of what the output might look like from the
 above input. The hashes will be substituted for the WordStats object.
